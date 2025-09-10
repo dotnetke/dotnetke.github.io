@@ -4,6 +4,10 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+// Support for PR previews - check if we're building for a PR
+const isPRPreview = process.env.PR_NUMBER !== undefined;
+const prNumber = process.env.PR_NUMBER;
+
 const config: Config = {
   title: '.NET Kenya Community',
   tagline: 'Building the .NET community in Kenya, one developer at a time',
@@ -18,7 +22,8 @@ const config: Config = {
   url: 'https://dotnetke.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  // For PR previews, use /pr-{number}/ as base URL
+  baseUrl: isPRPreview ? `/pr-${prNumber}/` : '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

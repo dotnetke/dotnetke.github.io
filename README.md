@@ -107,11 +107,20 @@ The website uses a custom theme inspired by .NET brand colors:
 
 The website is automatically deployed using GitHub Actions:
 
-- **Trigger**: Push to `main` branch
-- **Build**: Runs `npm run build` in the `src/` directory  
-- **Deploy**: Uploads to GitHub Pages
+- **Production**: Push to `main` branch deploys to [https://dotnetke.github.io](https://dotnetke.github.io)
+- **PR Previews**: Pull requests automatically get preview deployments at `https://dotnetke.github.io/pr-{number}/`
 
-The deployment workflow is defined in `.github/workflows/deploy.yml`.
+### Workflows
+
+- **`.github/workflows/deploy.yml`**: Production deployment to GitHub Pages
+- **`.github/workflows/pr-preview.yml`**: PR preview deployments
+
+### PR Preview Features
+
+- 🔍 **Automatic Previews**: Every pull request gets a preview site
+- 💬 **Bot Comments**: GitHub bot comments on PRs with preview links  
+- 🔄 **Live Updates**: Previews update automatically with new commits
+- 🧹 **Auto Cleanup**: Preview sites are removed when PRs are closed
 
 ## 🤝 Community Guidelines
 
