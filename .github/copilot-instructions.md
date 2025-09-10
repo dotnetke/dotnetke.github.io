@@ -1,221 +1,295 @@
 # .NET Kenya Community Website
-The .NET Kenya Community Website (dotnetke.github.io) is a GitHub Pages organization site for the .NET Kenya developer community. The repository is currently minimal but can be developed as a Jekyll static site, plain HTML/CSS/JS site, or modern Node.js-based static site.
+The .NET Kenya Community Website (dotnetke.github.io) is a GitHub Pages organization site for the .NET Kenya developer community built with Docusaurus, a modern static site generator optimized for creating documentation websites.
 
 Always reference these instructions first and fallback to search or bash commands only when you encounter unexpected information that does not match the info here.
 
 ## Working Effectively
 
 ### Environment Setup
-The build environment has both Ruby and Node.js available:
-- Ruby 3.2.3 is pre-installed at `/usr/bin/ruby`
+The build environment has Node.js available:
 - Node.js v20.19.5 is pre-installed at `/usr/local/bin/node`
 - npm 10.8.2 is available
 
-### Jekyll Development (Recommended for GitHub Pages)
+### Docusaurus Development (Primary Approach)
+
+#### Project Structure
+```
+/home/runner/work/dotnetke.github.io/dotnetke.github.io/
+├── README.md                      # Repository documentation
+├── .git/                          # Git repository
+├── .github/                       # GitHub configuration
+│   └── copilot-instructions.md    # This file
+├── .gitignore                     # Git ignore patterns
+├── package.json                   # Node.js dependencies and scripts
+├── docusaurus.config.js           # Docusaurus configuration
+├── sidebars.js                    # Documentation sidebar configuration
+├── src/                           # Source files
+│   ├── components/                # React components
+│   ├── css/                       # Global CSS
+│   └── pages/                     # Static pages
+├── docs/                          # Documentation content (Markdown)
+├── blog/                          # Blog posts (Markdown)
+├── static/                        # Static assets (images, fonts, etc.)
+└── build/                         # Generated site (git ignored)
+```
 
 #### Initial Setup
-- Install Jekyll and Bundler (required for GitHub Pages compatibility):
+- Install project dependencies:
   ```bash
-  gem install --user-install jekyll bundler
-  export PATH="$PATH:/home/runner/.local/share/gem/ruby/3.2.0/bin"
+  npm install
   ```
-  - NEVER CANCEL: Gem installation takes 2-4 minutes. Set timeout to 5+ minutes.
-
-#### Create New Jekyll Site
-- Create a new Jekyll site (use --force if directory is not empty):
-  ```bash
-  jekyll new . --skip-bundle --force
-  ```
-  - Takes 10-15 seconds to complete
-  - Use --force flag when directory contains existing files (README.md, .github/, etc.)
-
-#### Install Dependencies
-- Install gems locally to avoid permission issues:
-  ```bash
-  bundle config set --local path 'vendor/bundle'
-  bundle install
-  ```
-  - NEVER CANCEL: Bundle installation takes 3-5 minutes. Set timeout to 10+ minutes.
-  - This installs gems to `vendor/bundle` to avoid system permission issues
+  - NEVER CANCEL: npm install takes 30-120 seconds. Set timeout to 3+ minutes.
+  - Installs Docusaurus and all required dependencies
 
 #### Development Server
-- Run Jekyll development server:
+- Run Docusaurus development server:
   ```bash
-  export PATH="$PATH:/home/runner/.local/share/gem/ruby/3.2.0/bin"
-  bundle exec jekyll serve --host=0.0.0.0 --port=4000
+  npm start
   ```
-  - Site builds in 0.3-1 seconds
-  - Server runs on http://localhost:4000
+  - NEVER CANCEL: Initial build takes 10-30 seconds. Set timeout to 1+ minute.
+  - Server runs on http://localhost:3000
   - Auto-regeneration enabled for live development
-  - Expect Sass deprecation warnings (normal and non-breaking)
+  - Hot reloading for instant preview of changes
 
 #### Production Build
 - Build site for production:
   ```bash
-  export PATH="$PATH:/home/runner/.local/share/gem/ruby/3.2.0/bin"
-  bundle exec jekyll build
+  npm run build
   ```
-  - Build completes in 0.5-1 second
-  - Output goes to `_site/` directory
+  - Build completes in 10-30 seconds
+  - Output goes to `build/` directory
+  - Optimized for deployment to GitHub Pages
 
-### Node.js Development (Alternative Approach)
-
-#### Initial Setup
-- Initialize Node.js project:
+#### Serving Production Build
+- Test production build locally:
   ```bash
-  npm init -y
+  npm run serve
   ```
-  - Completes in 1-2 seconds
+  - Serves the built site from `build/` directory
+  - Runs on http://localhost:3000
+  - Use this to test before deploying
 
-#### Static Site Serving
-- For simple static HTML sites, install and use serve:
-  ```bash
-  npm install --save-dev serve
-  echo '<h1>Test Page</h1>' > index.html
-  npx serve .
-  ```
-  - NEVER CANCEL: npm install takes 30-60 seconds. Set timeout to 2+ minutes.
-  - Site serves immediately on http://localhost:3000 (default port)
+### GitHub Pages Deployment
 
-### Static HTML Development (Simplest Approach)
-- For plain HTML/CSS/JS sites, no build process required
-- Serve directly with Python or any web server:
+#### Automatic Deployment
+- GitHub Pages automatically builds and deploys Docusaurus sites
+- Push to main branch triggers automatic deployment
+- Site is available at https://dotnetke.github.io
+
+#### Manual Deployment
+- Deploy using Docusaurus built-in command:
   ```bash
-  python3 -m http.server 4000
+  npm run deploy
   ```
-  - Starts immediately
+  - Builds and pushes to gh-pages branch
+  - Requires proper Git configuration
+
+## Content Management
+
+### Documentation (docs/)
+- All documentation goes in the `docs/` folder
+- Use Markdown (.md) files
+- Frontmatter controls sidebar position and metadata:
+  ```markdown
+  ---
+  sidebar_position: 1
+  title: Page Title
+  ---
+  ```
+
+### Blog Posts (blog/)
+- Blog posts go in the `blog/` folder
+- Use date prefix: `YYYY-MM-DD-post-title.md`
+- Frontmatter for metadata:
+  ```markdown
+  ---
+  slug: custom-url-slug
+  title: Post Title
+  authors: [author-name]
+  tags: [tag1, tag2]
+  ---
+  ```
+
+### Static Assets (static/)
+- Images, fonts, and other assets go in `static/`
+- Referenced as `/img/filename.png` in Markdown
+- Favicon and logo files are in `static/img/`
+
+### Pages (src/pages/)
+- Custom React pages for special functionality
+- Homepage is `src/pages/index.js`
+- Additional pages create new routes
+
+### Components (src/components/)
+- Reusable React components
+- Can be imported in Markdown and other React files
+- Homepage features in `src/components/HomepageFeatures/`
+
+## Configuration
+
+### Site Configuration (docusaurus.config.js)
+- Main configuration file for the entire site
+- Contains site metadata, navigation, footer, and plugin settings
+- GitHub Pages specific settings already configured
+
+### Sidebar Configuration (sidebars.js)
+- Controls documentation sidebar structure
+- Can be auto-generated or manually defined
+- Currently set to auto-generate from `docs/` folder structure
+
+### Styling (src/css/custom.css)
+- Global CSS customizations
+- Override Infima CSS variables for theming
+- Dark/light mode support built-in
 
 ## Validation
 
 ### Manual Testing Requirements
 - ALWAYS test the complete user flow after making changes
-- For Jekyll sites: 
-  - Verify homepage loads and displays content correctly
-  - Test navigation links (About page, post links)
-  - Confirm RSS feed link works (http://localhost:4000/feed.xml)
-  - Check that posts display properly and are accessible
-- For static sites: Verify all pages load and links function properly
+- For Docusaurus sites:
+  - Verify homepage loads with hero section and features
+  - Test navigation menu (Docs, Blog, GitHub links)
+  - Check documentation sidebar navigation
+  - Verify blog posts display and are accessible
+  - Test search functionality (if enabled)
+  - Confirm responsive design on different screen sizes
 - ALWAYS run through at least one complete end-to-end scenario after making changes
 - Take screenshots of any UI changes to verify visual impact
 - Expected validation results:
-  - Homepage should show site title, navigation, posts list, and footer
-  - About page should load with content and working navigation
-  - All links should be functional and properly styled
+  - Homepage shows community title, tagline, and three feature cards
+  - Documentation section has working sidebar and content
+  - Blog section displays posts with proper formatting
+  - All links functional and properly styled
 
 ### Build Validation
 - Always run the full build process before committing:
   ```bash
-  # For Jekyll sites
-  export PATH="$PATH:/home/runner/.local/share/gem/ruby/3.2.0/bin"
-  bundle exec jekyll build
+  npm run build
   
-  # Check that _site directory contains expected files
-  ls -la _site/
+  # Check that build directory contains expected files
+  ls -la build/
   ```
+- Build should complete without errors or warnings
+- Generated HTML files should be present in `build/` directory
 
-### GitHub Pages Compatibility
-- GitHub Pages runs Jekyll automatically for `.github.io` repos
-- Ensure `_config.yml` is properly configured
-- Test locally first before pushing to verify GitHub Pages compatibility
-- GitHub Pages uses specific gem versions - check their documentation for current versions
+### Performance Testing
+- Check build performance with:
+  ```bash
+  npm run build -- --analyze
+  ```
+- Monitor bundle size and loading performance
+- Ensure images are optimized
 
 ## Common Tasks
 
-### Repository Structure (Current State)
-```
-/home/runner/work/dotnetke.github.io/dotnetke.github.io/
-├── README.md                    # Original: "# .NET Kenya Community Website"  
-├── .git/                        # Git repository
-├── .github/                     # GitHub configuration
-│   └── copilot-instructions.md  # This file
-├── _config.yml                  # Jekyll configuration (after jekyll new)
-├── _posts/                      # Blog posts directory (after jekyll new)
-├── _site/                       # Generated site (git ignored)
-├── Gemfile                      # Ruby dependencies (after jekyll new)
-├── Gemfile.lock                 # Locked gem versions (after bundle install)
-├── vendor/                      # Local gem installation (git ignored)
-├── index.markdown               # Homepage (after jekyll new)
-├── about.markdown               # About page (after jekyll new)
-└── assets/                      # CSS, JS, images (after jekyll new)
-```
+### Adding New Documentation
+1. Create new `.md` file in `docs/` folder
+2. Add frontmatter with `sidebar_position` and `title`
+3. Write content in Markdown
+4. Test with `npm start`
+5. Verify in sidebar navigation
 
-### Common File Commands Output
+### Creating Blog Posts
+1. Create new file in `blog/` with date prefix
+2. Add complete frontmatter (title, authors, tags, slug)
+3. Write content in Markdown
+4. Test with `npm start`
+5. Verify on blog listing page
 
-#### Repository Root (After Jekyll Setup)
-```
-$ ls -la
-total 48
-drwxr-xr-x 5 runner runner 4096 Sep 10 15:12 .
-drwxr-xr-x 3 runner runner 4096 Sep 10 15:02 ..
-drwxrwxr-x 7 runner runner 4096 Sep 10 15:10 .git
-drwxrwxr-x 2 runner runner 4096 Sep 10 15:11 .github
--rw-r--r-- 1 runner runner   56 Sep 10 15:12 .gitignore
--rw-r--r-- 1 runner runner  416 Sep 10 15:12 404.html
--rw-rw-r-- 1 runner runner 1307 Sep 10 15:12 Gemfile
--rw-rw-r-- 1 runner runner   31 Sep 10 15:03 README.md
--rw-r--r-- 1 runner runner 2079 Sep 10 15:12 _config.yml
-drwxrwxr-x 2 runner runner 4096 Sep 10 15:12 _posts
--rw-r--r-- 1 runner runner  539 Sep 10 15:12 about.markdown
--rw-r--r-- 1 runner runner  175 Sep 10 15:12 index.markdown
-```
+### Customizing Theme
+1. Edit `src/css/custom.css` for global styles
+2. Modify CSS variables for color scheme
+3. Create custom React components in `src/components/`
+4. Update `docusaurus.config.js` for navigation/footer changes
 
-#### Built Site Directory
-```
-$ ls -la _site/
-total 44
-drwxrwxr-x 5 runner runner 4096 Sep 10 15:13 .
-drwxr-xr-x 9 runner runner 4096 Sep 10 15:13 ..
--rw-rw-r-- 1 runner runner 4819 Sep 10 15:13 404.html
--rw-rw-r-- 1 runner runner   31 Sep 10 15:03 README.md
-drwxrwxr-x 2 runner runner 4096 Sep 10 15:13 about
-drwxrwxr-x 2 runner runner 4096 Sep 10 15:13 assets
--rw-rw-r-- 1 runner runner 3555 Sep 10 15:13 feed.xml
--rw-rw-r-- 1 runner runner 4681 Sep 10 15:13 index.html
-drwxrwxr-x 3 runner runner 4096 Sep 10 15:13 jekyll
-```
+### Adding Images
+1. Place images in `static/img/` directory
+2. Reference as `![Alt text](/img/filename.png)` in Markdown
+3. For React components, import: `require('@site/static/img/filename.png').default`
 
-#### Current README.md Content
-```
-$ cat README.md
-# .NET Kenya Community Website
-```
+## Troubleshooting
 
-### Troubleshooting
-
-#### Permission Issues with Gems
-- If gem installation fails with permission errors, use `--user-install`:
+### Build Failures
+- Clear cache and rebuild:
   ```bash
-  gem install --user-install jekyll bundler
-  export PATH="$PATH:/home/runner/.local/share/gem/ruby/3.2.0/bin"
+  npm run clear
+  npm run build
   ```
 
-#### Bundle Install Failures
-- If bundle install fails with permission errors, use local path:
+### Development Server Issues
+- Stop server (Ctrl+C) and restart:
   ```bash
-  bundle config set --local path 'vendor/bundle'
-  bundle install
+  npm start
+  ```
+- Clear node_modules if needed:
+  ```bash
+  rm -rf node_modules package-lock.json
+  npm install
   ```
 
-#### Jekyll Not Found
-- Always export PATH before using Jekyll commands:
+### Module Not Found Errors
+- Ensure all dependencies are installed:
   ```bash
-  export PATH="$PATH:/home/runner/.local/share/gem/ruby/3.2.0/bin"
+  npm install
   ```
+- Check import paths in React components
+- Verify file extensions (.js, .jsx, .md)
 
-### Development Workflow
-1. Set up environment (Ruby gems or Node.js packages)
-2. Create or modify site content
-3. Test locally with development server
-4. Validate build process
-5. Verify all functionality manually
-6. Push to GitHub (triggers GitHub Pages build automatically)
+### GitHub Pages Deployment Issues
+- Verify `docusaurus.config.js` has correct `url` and `baseUrl`
+- Check that `organizationName` and `projectName` match GitHub settings
+- Ensure build completes successfully before deployment
 
-### Performance Notes
-- Ruby gem installation: 2-4 minutes
-- Bundle install: 3-5 minutes  
-- Jekyll build: 0.5-1 second
-- Jekyll serve startup: 0.3-1 second
-- npm package installation: 30-60 seconds
-- Static site serving: Immediate
+## Development Workflow
+1. Set up environment (npm install)
+2. Create or modify content (docs, blog, components)
+3. Test locally with development server (npm start)
+4. Validate build process (npm run build)
+5. Test production build (npm run serve)
+6. Verify all functionality manually
+7. Push to GitHub (triggers automatic deployment)
+
+## Performance Notes
+- npm install: 30-120 seconds
+- Development server startup: 10-30 seconds
+- Production build: 10-30 seconds
+- Hot reload updates: <1 second
+- GitHub Pages deployment: 1-3 minutes after push
 
 **CRITICAL**: Always wait for installation and build commands to complete. Set timeouts appropriately and NEVER CANCEL long-running operations.
+
+## Expected Output Examples
+
+### Development Server Start
+```
+$ npm start
+> docusaurus start
+
+Starting the development server...
+Docusaurus website is running at: http://localhost:3000/
+
+✔ Client
+  Compiled successfully in 2.34s
+
+ℹ ｢wds｣: Project is running at http://localhost:3000/
+```
+
+### Production Build
+```
+$ npm run build
+> docusaurus build
+
+Creating an optimized production build...
+
+✔ Client
+  Compiled successfully in 12.34s
+
+Success! Generated static files in "build".
+```
+
+### Project Dependencies
+The site uses these key dependencies:
+- @docusaurus/core: Core Docusaurus functionality
+- @docusaurus/preset-classic: Standard theme and plugins
+- React: UI library (managed by Docusaurus)
+- MDX: Enhanced Markdown with React components
