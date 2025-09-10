@@ -1,0 +1,69 @@
+dotnet:
+  label: .NET
+  permalink: /dotnet
+  description: .NET framework and platform related posts
+
+dotnet8:
+  label: .NET 8
+  permalink: /dotnet8
+  description: .NET 8 specific content
+
+csharp:
+  label: C#
+  permalink: /csharp
+  description: C# programming language articles
+
+aspnet:
+  label: ASP.NET
+  permalink: /aspnet
+  description: ASP.NET Core web development content
+
+community:
+  label: Community
+  permalink: /community
+  description: .NET Kenya community news and updates
+
+welcome:
+  label: Welcome
+  permalink: /welcome
+  description: Welcome posts and introductions
+
+beginners:
+  label: Beginners
+  permalink: /beginners
+  description: Content for developers new to .NET
+
+tutorial:
+  label: Tutorial
+  permalink: /tutorial
+  description: Step-by-step programming tutorials
+
+getting-started:
+  label: Getting Started
+  permalink: /getting-started
+  description: Getting started guides and tutorials
+
+events:
+  label: Events
+  permalink: /events
+  description: Meetups, conferences, and community events
+
+career:
+  label: Career
+  permalink: /career
+  description: Career advice and professional development
+
+kenya:
+  label: Kenya
+  permalink: /kenya
+  description: Content specific to the Kenyan tech ecosystem
+
+azure:
+  label: Azure
+  permalink: /azure
+  description: Microsoft Azure cloud platform content
+
+blazor:
+  label: Blazor
+  permalink: /blazor
+  description: Blazor web development framework
