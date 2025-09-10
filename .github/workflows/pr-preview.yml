@@ -36,7 +36,7 @@ jobs:
         run: |
           cd src
           # Set base URL for PR preview
-          npm run build -- --config docusaurus.config.js
+          npm run build
         env:
           PR_NUMBER: ${{ github.event.number }}
 
