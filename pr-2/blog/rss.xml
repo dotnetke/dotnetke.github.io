@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xsl" href="rss.xsl"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>.NET Kenya Community Blog</title>
+        <link>https://dotnetke.github.io/pr-2/blog</link>
+        <description>.NET Kenya Community Blog</description>
+        <lastBuildDate>Sat, 20 Jan 2024 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Getting Started with .NET 8 - A Beginner's Guide]]></title>
+            <link>https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8</link>
+            <guid>https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8</guid>
+            <pubDate>Sat, 20 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[.NET 8 is here, and it's packed with exciting features that make it the perfect time to start your .NET journey! Whether you're a complete beginner or coming from another programming language, this guide will help you take your first steps.]]></description>
+            <content:encoded><![CDATA[<p>.NET 8 is here, and it's packed with exciting features that make it the perfect time to start your .NET journey! Whether you're a complete beginner or coming from another programming language, this guide will help you take your first steps.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="why-net-8">Why .NET 8?<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#why-net-8" class="hash-link" aria-label="Direct link to Why .NET 8?" title="Direct link to Why .NET 8?">​</a></h2>
+<p>.NET 8 brings several improvements that make it ideal for beginners:</p>
+<ul>
+<li><strong>Better performance</strong> - Faster startup times and improved memory usage</li>
+<li><strong>Simplified development</strong> - Less code needed for common tasks</li>
+<li><strong>Cross-platform</strong> - Write once, run on Windows, macOS, and Linux</li>
+<li><strong>Great tooling</strong> - Excellent IDE support and debugging capabilities</li>
+<li><strong>Huge ecosystem</strong> - Thousands of packages available through NuGet</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-youll-need">What You'll Need<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#what-youll-need" class="hash-link" aria-label="Direct link to What You'll Need" title="Direct link to What You'll Need">​</a></h2>
+<p>Before we start coding, let's set up your development environment:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-install-net-8-sdk">1. Install .NET 8 SDK<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#1-install-net-8-sdk" class="hash-link" aria-label="Direct link to 1. Install .NET 8 SDK" title="Direct link to 1. Install .NET 8 SDK">​</a></h3>
+<p>Visit <a href="https://dot.net/" target="_blank" rel="noopener noreferrer">dot.net</a> and download the latest .NET 8 SDK for your operating system.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-choose-your-ide">2. Choose Your IDE<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#2-choose-your-ide" class="hash-link" aria-label="Direct link to 2. Choose Your IDE" title="Direct link to 2. Choose Your IDE">​</a></h3>
+<ul>
+<li><strong>Visual Studio Community</strong> (Windows/Mac) - Full-featured IDE, perfect for beginners</li>
+<li><strong>Visual Studio Code</strong> (All platforms) - Lightweight, great for learning</li>
+<li><strong>JetBrains Rider</strong> - Premium option with advanced features</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-verify-installation">3. Verify Installation<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#3-verify-installation" class="hash-link" aria-label="Direct link to 3. Verify Installation" title="Direct link to 3. Verify Installation">​</a></h3>
+<p>Open your terminal and run:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dotnet --version</span><br></span></code></pre></div></div>
+<p>You should see something like <code>8.0.100</code> or higher.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="your-first-net-8-application">Your First .NET 8 Application<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#your-first-net-8-application" class="hash-link" aria-label="Direct link to Your First .NET 8 Application" title="Direct link to Your First .NET 8 Application">​</a></h2>
+<p>Let's create a simple console application:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">dotnet new console -n HelloKenya</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">cd HelloKenya</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">dotnet run</span><br></span></code></pre></div></div>
+<p>This creates and runs a basic "Hello, World!" application.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="making-it-kenyan">Making It Kenyan<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#making-it-kenyan" class="hash-link" aria-label="Direct link to Making It Kenyan" title="Direct link to Making It Kenyan">​</a></h3>
+<p>Let's customize our application:</p>
+<div class="language-csharp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-csharp codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Console.WriteLine("Habari! Welcome to .NET 8! 🇰🇪");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Console.WriteLine($"Today is {DateTime.Now:dddd, MMMM dd, yyyy}");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">Console.Write("What's your name? ");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">string? name = Console.ReadLine();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">if (!string.IsNullOrEmpty(name))</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">{</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Console.WriteLine($"Karibu {name}! Welcome to the .NET community!");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">    Console.WriteLine("Ready to build amazing applications? Let's go! 🚀");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">}</span><br></span></code></pre></div></div>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-makes-net-8-special">What Makes .NET 8 Special?<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#what-makes-net-8-special" class="hash-link" aria-label="Direct link to What Makes .NET 8 Special?" title="Direct link to What Makes .NET 8 Special?">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="minimal-apis">Minimal APIs<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#minimal-apis" class="hash-link" aria-label="Direct link to Minimal APIs" title="Direct link to Minimal APIs">​</a></h3>
+<p>Building web APIs has never been easier:</p>
+<div class="language-csharp codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-csharp codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">var builder = WebApplication.CreateBuilder(args);</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">var app = builder.Build();</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">app.MapGet("/", () =&gt; "Habari from Kenya! 🇰🇪");</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">app.MapGet("/time", () =&gt; DateTime.Now.ToString("F"));</span><br></span><span class="token-line" style="color:#393A34"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line" style="color:#393A34"><span class="token plain">app.Run();</span><br></span></code></pre></div></div>
+<p>This creates a web API with just a few lines of code!</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="top-level-statements">Top-Level Statements<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#top-level-statements" class="hash-link" aria-label="Direct link to Top-Level Statements" title="Direct link to Top-Level Statements">​</a></h3>
+<p>Notice how we don't need a <code>Main</code> method or class declarations? .NET 8 uses top-level statements to reduce boilerplate code.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="new-performance-features">New Performance Features<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#new-performance-features" class="hash-link" aria-label="Direct link to New Performance Features" title="Direct link to New Performance Features">​</a></h3>
+<ul>
+<li><strong>Native AOT</strong> - Compile to native code for faster startup</li>
+<li><strong>Source generators</strong> - Better compile-time code generation</li>
+<li><strong>Improved garbage collection</strong> - Better memory management</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="learning-path-for-kenyan-developers">Learning Path for Kenyan Developers<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#learning-path-for-kenyan-developers" class="hash-link" aria-label="Direct link to Learning Path for Kenyan Developers" title="Direct link to Learning Path for Kenyan Developers">​</a></h2>
+<p>Based on our local job market, here's what we recommend learning:</p>
+<ol>
+<li><strong>C# Fundamentals</strong> - Variables, methods, classes</li>
+<li><strong>ASP.NET Core</strong> - Web development (high demand in Kenya)</li>
+<li><strong>Entity Framework Core</strong> - Database interactions</li>
+<li><strong>Blazor</strong> - Build web UIs with C#</li>
+<li><strong>Azure</strong> - Cloud deployment and services</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="local-context-examples">Local Context Examples<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#local-context-examples" class="hash-link" aria-label="Direct link to Local Context Examples" title="Direct link to Local Context Examples">​</a></h2>
+<p>Throughout your learning, try building projects relevant to our local context:</p>
+<ul>
+<li><strong>M-Pesa Integration</strong> - Payment processing</li>
+<li><strong>County Government System</strong> - Public service applications</li>
+<li><strong>Agricultural Management</strong> - Farm management systems</li>
+<li><strong>Education Platform</strong> - E-learning for local schools</li>
+<li><strong>Healthcare System</strong> - Patient management systems</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="resources-for-learning">Resources for Learning<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#resources-for-learning" class="hash-link" aria-label="Direct link to Resources for Learning" title="Direct link to Resources for Learning">​</a></h2>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="online-courses">Online Courses<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#online-courses" class="hash-link" aria-label="Direct link to Online Courses" title="Direct link to Online Courses">​</a></h3>
+<ul>
+<li><a href="https://docs.microsoft.com/learn/" target="_blank" rel="noopener noreferrer">Microsoft Learn</a> - Free official courses</li>
+<li>Our own <a href="https://dotnetke.github.io/pr-2/courses/intro">.NET Kenya Courses</a> - Localized content</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="books">Books<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#books" class="hash-link" aria-label="Direct link to Books" title="Direct link to Books">​</a></h3>
+<ul>
+<li>"C# 12 and .NET 8 – Modern Cross-Platform Development" by Mark J. Price</li>
+<li>"ASP.NET Core in Action" by Andrew Lock</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="practice-platforms">Practice Platforms<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#practice-platforms" class="hash-link" aria-label="Direct link to Practice Platforms" title="Direct link to Practice Platforms">​</a></h3>
+<ul>
+<li><a href="https://hackerrank.com/" target="_blank" rel="noopener noreferrer">HackerRank</a> - Coding challenges</li>
+<li><a href="https://leetcode.com/" target="_blank" rel="noopener noreferrer">LeetCode</a> - Algorithm practice</li>
+<li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a> - Build your portfolio</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="join-our-community">Join Our Community<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#join-our-community" class="hash-link" aria-label="Direct link to Join Our Community" title="Direct link to Join Our Community">​</a></h2>
+<p>Learning is better together! Join our community:</p>
+<ul>
+<li><strong>Monthly Meetups</strong> - In-person and virtual sessions</li>
+<li><strong>Study Groups</strong> - Practice with fellow beginners</li>
+<li><strong>Mentorship Program</strong> - Get paired with experienced developers</li>
+<li><strong>Job Board</strong> - Access to .NET opportunities in Kenya</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="next-steps">Next Steps<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#next-steps" class="hash-link" aria-label="Direct link to Next Steps" title="Direct link to Next Steps">​</a></h2>
+<p>Ready to dive deeper? Here's what to do next:</p>
+<ol>
+<li><strong>Complete our <a href="https://dotnetke.github.io/pr-2/courses/dotnet-fundamentals/getting-started">.NET Fundamentals course</a></strong></li>
+<li><strong>Join our next <a href="https://dotnetke.github.io/pr-2/events">meetup</a></strong></li>
+<li><strong>Follow us on social media</strong> for daily tips and updates</li>
+<li><strong>Start building</strong> - Pick a small project and begin coding!</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="common-beginner-questions">Common Beginner Questions<a href="https://dotnetke.github.io/pr-2/blog/getting-started-dotnet-8#common-beginner-questions" class="hash-link" aria-label="Direct link to Common Beginner Questions" title="Direct link to Common Beginner Questions">​</a></h2>
+<p><strong>Q: Is .NET only for Windows?</strong>
+A: No! .NET runs on Windows, macOS, and Linux.</p>
+<p><strong>Q: Do I need to pay for Visual Studio?</strong>
+A: Visual Studio Community is free for individuals and small teams.</p>
+<p><strong>Q: How long does it take to learn .NET?</strong>
+A: With consistent practice, you can build basic applications in 2-3 months.</p>
+<p><strong>Q: Are there job opportunities in Kenya?</strong>
+A: Yes! Many companies in Kenya use .NET for enterprise applications.</p>
+<hr>
+<p>Ready to start your .NET 8 journey? We're here to support you every step of the way!</p>
+<p><em>Furahia kuprogramu! (Enjoy programming!)</em></p>]]></content:encoded>
+            <category>.NET 8</category>
+            <category>Beginners</category>
+            <category>Tutorial</category>
+            <category>Getting Started</category>
+        </item>
+        <item>
+            <title><![CDATA[Welcome to .NET Kenya Community!]]></title>
+            <link>https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya</link>
+            <guid>https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya</guid>
+            <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
+            <description><![CDATA[We're thrilled to launch the official website for the .NET Kenya Community! This marks a significant milestone in our journey to build a vibrant and supportive ecosystem for .NET developers across Kenya and East Africa.]]></description>
+            <content:encoded><![CDATA[<p>We're thrilled to launch the official website for the .NET Kenya Community! This marks a significant milestone in our journey to build a vibrant and supportive ecosystem for .NET developers across Kenya and East Africa.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="our-mission">Our Mission<a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#our-mission" class="hash-link" aria-label="Direct link to Our Mission" title="Direct link to Our Mission">​</a></h2>
+<p>The .NET Kenya Community exists to:</p>
+<ul>
+<li><strong>Connect</strong> developers passionate about .NET technologies</li>
+<li><strong>Share</strong> knowledge through meetups, workshops, and online resources</li>
+<li><strong>Support</strong> career growth and professional development</li>
+<li><strong>Collaborate</strong> on open source projects and community initiatives</li>
+<li><strong>Celebrate</strong> the achievements of our members</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-youll-find-here">What You'll Find Here<a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#what-youll-find-here" class="hash-link" aria-label="Direct link to What You'll Find Here" title="Direct link to What You'll Find Here">​</a></h2>
+<p>Our new website serves as your central hub for everything .NET Kenya:</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-events">🗓️ <a href="https://dotnetke.github.io/pr-2/events">Events</a><a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#%EF%B8%8F-events" class="hash-link" aria-label="Direct link to ️-events" title="Direct link to ️-events">​</a></h3>
+<p>Stay updated on our regular meetups, workshops, and special events. Each event page includes speaker information, presentation materials, and recordings when available.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-courses">📚 <a href="https://dotnetke.github.io/pr-2/courses/intro">Courses</a><a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#-courses" class="hash-link" aria-label="Direct link to -courses" title="Direct link to -courses">​</a></h3>
+<p>Access our growing library of courses designed specifically for Kenyan developers. From .NET fundamentals to advanced topics, all with local context and real-world examples.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="️-blog">✍️ <a href="https://dotnetke.github.io/pr-2/blog">Blog</a><a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#%EF%B8%8F-blog" class="hash-link" aria-label="Direct link to ️-blog" title="Direct link to ️-blog">​</a></h3>
+<p>Read community news, technical articles, career advice, and insights from fellow developers in the Kenyan tech ecosystem.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="-contact">📞 <a href="https://dotnetke.github.io/pr-2/contact">Contact</a><a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#-contact" class="hash-link" aria-label="Direct link to -contact" title="Direct link to -contact">​</a></h3>
+<p>Learn how to get involved, become a speaker, volunteer, or just connect with the community.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="join-our-growing-community">Join Our Growing Community<a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#join-our-growing-community" class="hash-link" aria-label="Direct link to Join Our Growing Community" title="Direct link to Join Our Growing Community">​</a></h2>
+<p>Whether you're a seasoned .NET architect or just starting your programming journey, there's a place for you in our community. We believe in:</p>
+<ul>
+<li><strong>Inclusive learning</strong> - Everyone starts somewhere, and we're here to support each other</li>
+<li><strong>Knowledge sharing</strong> - Your experiences, however small, can help others grow</li>
+<li><strong>Professional growth</strong> - Connect with mentors, find job opportunities, and advance your career</li>
+<li><strong>Fun and friendship</strong> - Technology is better when shared with great people!</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="get-connected">Get Connected<a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#get-connected" class="hash-link" aria-label="Direct link to Get Connected" title="Direct link to Get Connected">​</a></h2>
+<ul>
+<li><strong>Twitter</strong>: <a href="https://twitter.com/dotnetke" target="_blank" rel="noopener noreferrer">@dotnetke</a></li>
+<li><strong>Meetup</strong>: <a href="https://www.meetup.com/net-kenya-community/" target="_blank" rel="noopener noreferrer">.NET Kenya Community</a></li>
+<li><strong>GitHub</strong>: <a href="https://github.com/dotnetke" target="_blank" rel="noopener noreferrer">github.com/dotnetke</a></li>
+<li><strong>LinkedIn</strong>: <a href="https://linkedin.com/company/dotnet-kenya" target="_blank" rel="noopener noreferrer">.NET Kenya Community</a></li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="whats-next">What's Next?<a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#whats-next" class="hash-link" aria-label="Direct link to What's Next?" title="Direct link to What's Next?">​</a></h2>
+<p>We have exciting plans for 2024:</p>
+<ul>
+<li>Monthly technical meetups</li>
+<li>Hands-on workshops and bootcamps</li>
+<li>Guest speakers from international tech companies</li>
+<li>Open source project collaborations</li>
+<li>Career development sessions</li>
+<li>Social events and networking opportunities</li>
+</ul>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="thank-you">Thank You<a href="https://dotnetke.github.io/pr-2/blog/welcome-to-dotnet-kenya#thank-you" class="hash-link" aria-label="Direct link to Thank You" title="Direct link to Thank You">​</a></h2>
+<p>A huge thanks to all the volunteers who made this website possible and continue to drive our community forward. Special recognition goes to our founding members who believed in this vision from day one.</p>
+<p>Ready to start your journey with us? Check out our upcoming <a href="https://dotnetke.github.io/pr-2/events">events</a> or dive into our <a href="https://dotnetke.github.io/pr-2/courses/intro">courses</a>!</p>
+<p>Welcome to the family! 🚀</p>
+<hr>
+<p><em>Karibu sana! (You're very welcome!)</em></p>]]></content:encoded>
+            <category>Welcome</category>
+            <category>Community</category>
+            <category>.NET</category>
+            <category>Kenya</category>
+        </item>
+    </channel>
+</rss>
