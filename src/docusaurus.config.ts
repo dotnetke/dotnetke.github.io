@@ -25,6 +25,9 @@ const config: Config = {
   // For PR previews, use /pr-{number}/ as base URL
   baseUrl: isPRPreview ? `/pr-${prNumber}/` : '/',
 
+  // Disable trailing slashes for better GitHub Pages subdirectory support
+  trailingSlash: false,
+
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'dotnetke', // Usually your GitHub org/user name.
