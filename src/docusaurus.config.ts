@@ -25,13 +25,20 @@ const config: Config = {
   // For PR previews, use /pr-{number}/ as base URL
   baseUrl: isPRPreview ? `/pr-${prNumber}/` : '/',
 
-  // Disable trailing slashes for better GitHub Pages subdirectory support
-  trailingSlash: false,
+  // Configure trailing slashes based on deployment type
+  // GitHub Pages subdirectories work better with trailing slashes enabled
+  trailingSlash: isPRPreview ? true : false,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'dotnetke', // Usually your GitHub org/user name.
   projectName: 'dotnetke.github.io', // Usually your repo name.
+  
+  // For GitHub Pages deployment, ensure proper deployment configuration
+  deploymentBranch: 'gh-pages',
+  
+  // Add CNAME for custom domain support (optional)
+  // CNAME: 'dotnetke.org', // Uncomment if you have a custom domain
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
