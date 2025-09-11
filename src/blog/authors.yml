@@ -1,0 +1,20 @@
+admin:
+  name: .NET Kenya Community
+  title: Community Administrators
+  url: https://github.com/dotnetke
+  image_url: https://github.com/dotnetke.png
+  page: true
+  socials:
+    x: dotnetke
+    linkedin: dotnet-kenya
+    github: dotnetke
+
+community:
+  name: Community Contributors  
+  title: .NET Kenya Community Members
+  url: https://dotnetke.github.io
+  image_url: https://github.com/dotnetke.png
+  page: true
+  socials:
+    x: dotnetke
+    github: dotnetke
